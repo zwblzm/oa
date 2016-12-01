@@ -1,5 +1,13 @@
 package cn.aurora.oa.dao.impl;
 
-public class RoleImpl {
+import org.springframework.stereotype.Repository;
+
+import cn.aurora.oa.base.BaseDaoImpl;
+import cn.aurora.oa.dao.dao.RoleDao;
+import cn.aurora.oa.vo.RoleModel;
+
+
+@Repository
+public class RoleImpl extends BaseDaoImpl<RoleModel> implements RoleDao{
 
 }

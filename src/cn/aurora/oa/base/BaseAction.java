@@ -2,6 +2,7 @@ package cn.aurora.oa.base;
 
 import java.lang.reflect.ParameterizedType;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -29,6 +30,13 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T>{
 	public T getModel() {
 		// TODO Auto-generated method stub
 		return model;
+	}
+	
+	
+	public void setValueStack(String name, Object obj) {
+		ActionContext.getContext().getValueStack().set(name, obj);
+		
+		
 	}
 	
 	
