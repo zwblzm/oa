@@ -6,7 +6,14 @@
 	
 <struts>
 	<package name="common" extends="struts-default" namespace="/">
-	
+		<action name="commonAction_*" class="commonAction" method="{1}">
+			<result name="topPage">/WEB-INF/jsps/frame/frame_topPage.jsp</result>
+			<result name="rightPage">/WEB-INF/jsps/frame/frame_rightPage.jsp</result>
+			<result name="bottomPage">/WEB-INF/jsps/frame/frame_bottomPage.jsp</result>
+			<result name="leftPage">/WEB-INF/jsps/frame/frame_leftPage.jsp</result>
+		
+		
+		</action>
 	
 	
 	</package>
