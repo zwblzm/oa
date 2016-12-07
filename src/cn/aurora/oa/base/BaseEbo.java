@@ -12,5 +12,10 @@ public class BaseEbo<T> implements BaseEbi<T>{
 		return baseDao.findAll();
 		
 	}
+	@Override
+	public void addModel(T model) {
+		//TODO 开发通用添加用户接口层
+		
+	}
 
 }

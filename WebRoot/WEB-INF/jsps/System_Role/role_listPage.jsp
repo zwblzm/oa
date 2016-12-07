@@ -40,7 +40,7 @@
         </thead>
 
 		<!--显示数据列表-->
-        <tbody id="TableData" class="dataContainer">
+        <tbody id="TableData" >
 			
 			
 			<s:iterator value="roleList" >
@@ -64,7 +64,8 @@
     <!-- 其他功能超链接 -->
     <div id="TableTail">
         <div id="TableTail_inside">
-            <a href="saveUI.html"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></a>
+          
+            <s:a action="roleAction_roleAddPage.do"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></s:a>
         </div>
     </div>
 </div>

@@ -9,6 +9,8 @@
 		<action name="roleAction_*" class="roleAction" method="{1}">
 			<!-- 岗位列表界面 -->
 			<result name="roleListPage">/WEB-INF/jsps/System_Role/role_listPage.jsp</result>
+			<!-- 岗位添加界面 -->
+			<result name="roleAddPage">/WEB-INF/jsps/System_Role/role_addPage.jsp</result>
 			
 		
 		</action>

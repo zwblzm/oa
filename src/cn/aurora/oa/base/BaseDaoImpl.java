@@ -55,7 +55,7 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T>{
 
 	@Override
 	public List<T> findAll() {
-		String hql="from"+clazz.getSimpleName();
+		String hql="from "+clazz.getSimpleName();
 		return this.getHibernateTemplate().find(hql);
 	}
 
