@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,7 +30,8 @@
 
 <!--显示表单内容-->
 <div id="MainArea">
-    <form action="list.html">
+    
+    <s:form action="roleAction_roleAdd.do" method="POST">
         <div class="ItemBlock_Title1"><!-- 信息说明<DIV CLASS="ItemBlock_Title1">
         	<IMG BORDER="0" WIDTH="4" HEIGHT="7" SRC="${pageContext.request.contextPath}/style/blue/images/item_point.gif" /> 岗位信息 </DIV>  -->
         </div>
@@ -55,7 +57,7 @@
             <input type="image" src="${pageContext.request.contextPath}/style/images/save.png"/>
             <a href="javascript:history.go(-1);"><img src="${pageContext.request.contextPath}/style/images/goBack.png"/></a>
         </div>
-    </form>
+   </s:form>
 </div>
 
 </body>

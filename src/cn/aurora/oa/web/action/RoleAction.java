@@ -41,7 +41,7 @@ public class RoleAction extends BaseAction<RoleModel>{
 	
 	//岗位添加
 		public String roleAdd() {
-			roleEbi.
+			roleEbi. addModel(model);
 			
 			
 			return "toRoleListPage";

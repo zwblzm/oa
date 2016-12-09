@@ -12,6 +12,11 @@
 			<!-- 岗位添加界面 -->
 			<result name="roleAddPage">/WEB-INF/jsps/System_Role/role_addPage.jsp</result>
 			
+			<result name="toRoleListPage" type="chain">
+				<param name="namespace">/</param>
+				<param name="actionName">roleAction_roleListPage.do</param>
+			</result>
+			
 		
 		</action>
 	
