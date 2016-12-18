@@ -39,6 +39,13 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T>{
 		
 	}
 	
+	public void pushModel(Object model) {
+		
+		
+		
+		ActionContext.getContext().getValueStack().push(model);
+	}
+	
 	
 	
 

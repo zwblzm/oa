@@ -33,6 +33,7 @@
         <!-- 表头-->
         <thead>
             <tr align="CENTER" valign="MIDDLE" id="TableTitle">
+            	<td width="200px">选择</td>
             	<td width="200px">岗位名称</td>
                 <td width="300px">岗位说明</td>
                 <td>相关操作</td>
@@ -45,10 +46,27 @@
 			
 			<s:iterator value="roleList" >
 			<tr class="TableDetail1 template">
+				<td><input type="checkbox"/></td>
 				<td>${roleName}&nbsp;</td>
 				<td>${description}&nbsp;</td>
-				<td><a onClick="return delConfirm()" href="list.html">删除</a>
-					<a href="saveUI.html">修改</a>
+				<td>
+					<s:a action="roleAction_roleDelete.do" >
+					
+					<s:param name="id" value="id"></s:param>
+					
+					删除
+					
+						
+					
+					</s:a>
+					
+					<s:a action="roleAction_roleUpdatePage.do">
+					<s:param name="id" value="id"></s:param>
+					修改
+					
+					</s:a>
+					
+					
 					<a href="setPrivilegeUI.html">设置权限</a>
 				</td>
 			</tr>

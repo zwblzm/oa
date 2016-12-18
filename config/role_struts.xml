@@ -14,7 +14,7 @@
 			
 			<result name="toRoleListPage" type="chain">
 				<param name="namespace">/</param>
-				<param name="actionName">roleAction_roleListPage.do</param>
+				<param name="actionName">roleAction_roleListPage</param>
 			</result>
 			
 		

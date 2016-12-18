@@ -42,11 +42,18 @@
                 <table cellpadding="0" cellspacing="0" class="mainForm">
                     <tr>
                         <td width="100">岗位名称</td>
-                        <td><input type="text" name="name" class="InputStyle" /> *</td>
+                        <td>
+                        
+                        
+                        <s:textfield name="roleName" cssClass="InputStyle"></s:textfield> *
+                        </td>
+                       
                     </tr>
                     <tr>
                         <td>岗位说明</td>
-                        <td><textarea name="description" class="TextareaStyle"></textarea></td>
+                        <td>
+                        <s:textarea name="description" cssClass="TextareaStyle"></s:textarea>
+                       </td>
                     </tr>
                 </table>
             </div>
