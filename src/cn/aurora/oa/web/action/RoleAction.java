@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cn.aurora.oa.base.BaseAction;
@@ -16,7 +17,7 @@ import cn.aurora.oa.vo.RoleModel;
  * @author Administrator
  * 
  */
-
+@Scope("prototype")
 @Controller
 public class RoleAction extends BaseAction<RoleModel> {
 	@Resource
@@ -35,7 +36,7 @@ public class RoleAction extends BaseAction<RoleModel> {
 		return "roleAddPage";
 	}
 
-	// 岗位添加界面
+	// 岗位修改界面
 	public String roleUpdatePage() {
 		
 		RoleModel role = roleEbi.findRoleById(model.getId());
