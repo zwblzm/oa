@@ -38,7 +38,7 @@ public class RoleAction extends BaseAction<RoleModel> {
 
 	// 岗位修改界面
 	public String roleUpdatePage() {
-		
+
 		RoleModel role = roleEbi.findRoleById(model.getId());
 		pushModel(role);
 		return "roleAddPage";
@@ -48,6 +48,13 @@ public class RoleAction extends BaseAction<RoleModel> {
 	public String roleAdd() {
 		roleEbi.addRole(model);
 
+		return "toRoleListPage";
+	}
+
+	// 岗位添加
+	public String roleUpdate() {
+		RoleModel role = roleEbi.findRoleById(model.getId());
+		System.out.println(role);
 		return "toRoleListPage";
 	}
 

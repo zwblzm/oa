@@ -36,6 +36,12 @@
         	<IMG BORDER="0" WIDTH="4" HEIGHT="7" SRC="${pageContext.request.contextPath}/style/blue/images/item_point.gif" /> 岗位信息 </DIV>  -->
         </div>
         
+        <s:if test="%{id == null}">
+        
+        	<s:hidden name="id" value="id"></s:hidden>
+        
+        </s:if>
+        
         <!-- 表单内容显示 -->
         <div class="ItemBlockBorder">
             <div class="ItemBlock">
