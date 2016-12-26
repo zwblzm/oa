@@ -10,4 +10,8 @@ public interface DepartmentEbi {
 
 	void deleteDepartment(String id);
 
+	DepartmentModel findDepartmentById(String parentId);
+
+	void departmentAdd(DepartmentModel model);
+
 }

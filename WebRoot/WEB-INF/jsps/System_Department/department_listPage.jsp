@@ -67,7 +67,8 @@
     <!-- 其他功能超链接 -->
     <div id="TableTail">
         <div id="TableTail_inside">
-            <a href="saveUI.html"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></a>
+            <s:a action="departmentAction_departmentAddPage.do"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></s:a>
+            
         </div>
     </div>
 </div>
