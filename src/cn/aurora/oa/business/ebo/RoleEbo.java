@@ -59,4 +59,22 @@ public class RoleEbo implements RoleEbi{
 		return role;
 	}
 
+
+
+
+	@Override
+	public void updateRole(RoleModel role) {
+		roleDao.updateModel(role);
+		
+	}
+
+
+
+
+	@Override
+	public List<RoleModel> findRoleByName(String roleName) {
+		List<RoleModel> roles = roleDao.findRoleByName(roleName);
+		return roles;
+	}
+
 }

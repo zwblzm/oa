@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -40,15 +42,25 @@
         </thead>
 
 		<!--显示数据列表-->
-        <tbody id="TableData" class="dataContainer" datakey="departmentList">
+        <tbody id="TableData" >
+        <s:iterator value="departmentList">
 			<tr class="TableDetail1 template">
-				<td><a href="_list_level2.html">${department.name}</a>&nbsp;</td>
-				<td>${department.parent.name}&nbsp;</td>
-				<td>${department.description}&nbsp;</td>
-				<td><a onClick="return window.confirm('这将删除所有的下级部门，您确定要删除吗？')" href="#">删除</a>
+				<td><a href="_list_level2.html">${departmentName}</a>&nbsp;</td>
+				<td>${parent.departmentName}&nbsp;</td>
+				<td>${description}&nbsp;</td>
+				<td>
+					<s:a action="departmentAction_departmentDelete.do">
+					<s:param name="id" value="id"></s:param>
+					删除
+						
+					</s:a>
+				
+				
+				
 					<a href="saveUI.html">修改</a>
 				</td>
 			</tr>
+		</s:iterator>
         </tbody>
     </table>
     

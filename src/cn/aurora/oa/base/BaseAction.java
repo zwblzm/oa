@@ -2,6 +2,11 @@ package cn.aurora.oa.base;
 
 import java.lang.reflect.ParameterizedType;
 
+import javax.annotation.Resource;
+
+import cn.aurora.oa.business.ebi.DepartmentEbi;
+import cn.aurora.oa.business.ebi.RoleEbi;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -9,6 +14,10 @@ import com.opensymphony.xwork2.ModelDriven;
 public class BaseAction<T> extends ActionSupport implements ModelDriven<T>{
 	
 	protected T model;
+	@Resource
+	protected DepartmentEbi departmentEbi;
+	@Resource
+	protected RoleEbi roleEbi;
 	
 	public BaseAction() {
 		

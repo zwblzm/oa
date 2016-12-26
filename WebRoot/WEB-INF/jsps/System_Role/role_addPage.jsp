@@ -13,6 +13,39 @@
 	<script language="javascript" src="${pageContext.request.contextPath}/script/DataShowManager.js" charset="utf-8"></script>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/pageCommon.css" />
     <script type="text/javascript"> 
+    
+    	function checkRoleName(name) {
+    		var url="${pageContext.request.contextPath}/roleAction_checkRoleName.do";
+    	
+    	
+    		$.post(url,{'roleName':name},function(data) {
+    		
+    			if(data == '1') {
+    			
+    				$("#saveButton").css("display","none");
+    			
+    			} else {
+    				$("#saveButton").css("display","");
+    			
+    			}
+    		
+    		
+    		})
+    		
+    	
+    	
+    	
+    	
+    	}
+    	
+    	
+    	
+    	
+    
+    
+    
+    
+    
     </script>
 </head>
 <body> 
@@ -36,9 +69,9 @@
         	<IMG BORDER="0" WIDTH="4" HEIGHT="7" SRC="${pageContext.request.contextPath}/style/blue/images/item_point.gif" /> 岗位信息 </DIV>  -->
         </div>
         
-        <s:if test="%{id == null}">
+        <s:if test="%{id != null}">
         
-        	<s:hidden name="id" value="id"></s:hidden>
+        	<s:hidden name="id"></s:hidden>
         
         </s:if>
         
@@ -51,7 +84,7 @@
                         <td>
                         
                         
-                        <s:textfield name="roleName" cssClass="InputStyle"></s:textfield> *
+                        <s:textfield name="roleName" cssClass="InputStyle" onblur="checkRoleName(value)"></s:textfield> *<s:fielderror name="roleName"></s:fielderror>
                         </td>
                        
                     </tr>
@@ -67,7 +100,7 @@
         
         <!-- 表单操作 -->
         <div id="InputDetailBar">
-            <input type="image" src="${pageContext.request.contextPath}/style/images/save.png"/>
+            <input type="image" src="${pageContext.request.contextPath}/style/images/save.png" id="saveButton"/>
             <a href="javascript:history.go(-1);"><img src="${pageContext.request.contextPath}/style/images/goBack.png"/></a>
         </div>
    </s:form>

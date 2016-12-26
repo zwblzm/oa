@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="roleName">
+		<field-validator type="requiredstring">
+			<message>岗位名称不能为空！</message>
+		
+		</field-validator>
+	
+	</field>
+
+
+
+
+</validators>

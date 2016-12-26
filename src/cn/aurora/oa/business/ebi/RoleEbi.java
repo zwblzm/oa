@@ -13,4 +13,8 @@ public interface RoleEbi {
 
 	public RoleModel findRoleById(String id);
 
+	public void updateRole(RoleModel role);
+
+	public List<RoleModel> findRoleByName(String roleName);
+
 }

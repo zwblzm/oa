@@ -16,7 +16,7 @@
 				<param name="namespace">/</param>
 				<param name="actionName">roleAction_roleListPage</param>
 			</result>
-			
+			<result name="input">/WEB-INF/jsps/System_Role/role_addPage.jsp</result>
 		
 		</action>
 	

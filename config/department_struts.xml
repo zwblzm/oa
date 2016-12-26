@@ -8,9 +8,13 @@
 	<package name="department" extends="struts-default" namespace="/">
 		<action name="departmentAction_*" class="departmentAction" method="{1}">
 			<!-- 岗位列表界面 -->
-			<result name="departmentListPage">/WEB-INF/jsps/System_Role/role_listPage.jsp</result>
+			<result name="departmentListPage">/WEB-INF/jsps/System_Department/department_listPage.jsp</result>
 			
+			<result name="toDepartmentListPage" type="chain">
+				<param name="namespace">/</param>
+				<param name="actionName">departmentAction_departmentListPage</param>
 			
+			</result>
 		
 		</action>
 	
