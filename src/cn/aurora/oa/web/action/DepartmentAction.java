@@ -2,11 +2,13 @@ package cn.aurora.oa.web.action;
 
 import java.util.List;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cn.aurora.oa.base.BaseAction;
 import cn.aurora.oa.vo.DepartmentModel;
 @Controller
+@Scope("prototype")
 public class DepartmentAction extends BaseAction<DepartmentModel>{
 	
 	private String parentId;//属性驱动
@@ -46,19 +48,39 @@ public class DepartmentAction extends BaseAction<DepartmentModel>{
 			
 		}
 		
-		
-		
-		
-		
-		
-		
-		
 		return "toDepartmentListPage";
+	}
+	
+	
+	//修改部门界面
+	public String departmentUpdatePage() {
+		//修改界面页面回显
+		DepartmentModel department = departmentEbi.findDepartmentById(model.getId());
+		
+		if(department.getParent()!=null) {
+			
+			
+			parentId=department.getParent().getId();
+		}
+		pushModel(department);
+		
+		
+		//准备部门列表数据
+		List<DepartmentModel> departmentList = departmentEbi.findAll();
+		
+		
+		setValueStack("departmentList", departmentList);
+		return "departmentAddPage";
 	}
 
 	
 	public void setParentId(String parentId) {
 		this.parentId = parentId;
+	}
+
+
+	public String getParentId() {
+		return parentId;
 	}
 	
 	

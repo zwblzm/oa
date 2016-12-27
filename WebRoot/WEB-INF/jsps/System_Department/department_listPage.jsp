@@ -57,7 +57,8 @@
 				
 				
 				
-					<a href="saveUI.html">修改</a>
+					
+					<s:a action="departmentAction_departmentUpdatePage.do?id=%{id}">修改</s:a>
 				</td>
 			</tr>
 		</s:iterator>
