@@ -43,6 +43,11 @@ public class DepartmentModel {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	@Override
+	public String toString() {
+		return "DepartmentModel [id=" + id + ", departmentName="
+				+ departmentName + ", description=" + description + "]";
+	}
 	 
 	 
 	 

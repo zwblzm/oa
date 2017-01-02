@@ -54,4 +54,20 @@ public class DepartmentEbo implements DepartmentEbi{
 		
 	}
 
+
+
+	@Override
+	public List<DepartmentModel> findDepartmentTopList() {
+		
+		return departmentDao.findDepartmentTopList();
+	}
+
+
+
+	@Override
+	public List<DepartmentModel> findDepartmentChildren(String parentId) {
+		
+		return departmentDao.findDepartmentChildren(parentId);
+	}
+
 }

@@ -1,5 +1,6 @@
 package cn.aurora.oa.web.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.annotation.Scope;
@@ -15,7 +16,33 @@ public class DepartmentAction extends BaseAction<DepartmentModel>{
 	
 	//显示部门列表
 	public String departmentListPage() {
-		List<DepartmentModel> departmentList = departmentEbi.findAll();
+		List<DepartmentModel> departmentList = new ArrayList<DepartmentModel>();
+		
+		if(parentId ==null) {
+			
+			departmentList = departmentEbi.findDepartmentTopList();
+			
+			
+		}else {
+			
+			departmentList = departmentEbi.findDepartmentChildren(parentId);
+			DepartmentModel department = departmentEbi.findDepartmentById(parentId);
+//			if(null!=department.getParent()) {
+//				
+//				parentId=department.getParent().getId();
+//				
+//			}else {
+//				
+//				
+//				parentId=null;
+//			}
+		}
+		
+		
+		
+		
+		
+		
 		setValueStack("departmentList", departmentList);
 		return "departmentListPage";
 	}
@@ -71,6 +98,16 @@ public class DepartmentAction extends BaseAction<DepartmentModel>{
 		
 		setValueStack("departmentList", departmentList);
 		return "departmentAddPage";
+	}
+	
+	
+	
+	//部门修改
+	public String departmentUpdate() {
+		
+		
+		
+		return "toDepartmentListPage";
 	}
 
 	

@@ -14,4 +14,8 @@ public interface DepartmentEbi {
 
 	void departmentAdd(DepartmentModel model);
 
+	List<DepartmentModel> findDepartmentTopList();
+
+	List<DepartmentModel> findDepartmentChildren(String parentId);
+
 }

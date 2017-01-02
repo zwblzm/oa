@@ -1,23 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%@taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <title>部门列表</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script language="javascript" src="${pageContext.request.contextPath}/script/jquery.js"></script>
-    <script language="javascript" src="${pageContext.request.contextPath}/script/pageCommon.js" charset="utf-8"></script>
-    <script language="javascript" src="${pageContext.request.contextPath}/script/PageUtils.js" charset="utf-8"></script>
-    <script language="javascript" src="${pageContext.request.contextPath}/script/DemoData.js" charset="utf-8"></script>
-	<script language="javascript" src="${pageContext.request.contextPath}/script/DataShowManager.js" charset="utf-8"></script>
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/pageCommon.css" />
+    <%@include file="/WEB-INF/jsps/public/header.jsp"%>
     <script type="text/javascript">
     </script>
 </head>
 <body>
- 
+ <s:debug></s:debug>
+ <hr/>
 <div id="Title_bar">
     <div id="Title_bar_Head">
         <div id="Title_Head"></div>
@@ -45,7 +40,14 @@
         <tbody id="TableData" >
         <s:iterator value="departmentList">
 			<tr class="TableDetail1 template">
-				<td><a href="_list_level2.html">${departmentName}</a>&nbsp;</td>
+				<td>
+					<s:a action="departmentAction_departmentListPage.do">${departmentName}
+						<s:param name="parentId" value="id"></s:param>
+					
+					</s:a>
+				
+				
+				&nbsp;</td>
 				<td>${parent.departmentName}&nbsp;</td>
 				<td>${description}&nbsp;</td>
 				<td>
@@ -69,7 +71,12 @@
     <div id="TableTail">
         <div id="TableTail_inside">
             <s:a action="departmentAction_departmentAddPage.do"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></s:a>
-            
+            <s:if test="%{parentId!=null}">
+            	<s:a action="departmentAction_departmentListPage.do">
+            	
+            	<s:param name="parentId" value="parentId"></s:param>
+            	<IMG SRC="${pageContext.request.contextPath}/style/blue/images/button/ReturnToPrevLevel.png" /></s:a>
+            </s:if>
         </div>
     </div>
 </div>
