@@ -8,7 +8,7 @@ public interface DepartmentEbi {
 
 	List<DepartmentModel> findAll();
 
-	void deleteDepartment(String id);
+	
 
 	DepartmentModel findDepartmentById(String parentId);
 
@@ -17,5 +17,7 @@ public interface DepartmentEbi {
 	List<DepartmentModel> findDepartmentTopList();
 
 	List<DepartmentModel> findDepartmentChildren(String parentId);
+
+	void departmentDelete(String id);
 
 }

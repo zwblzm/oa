@@ -18,8 +18,8 @@ public class DepartmentAction extends BaseAction<DepartmentModel>{
 	public String departmentListPage() {
 		List<DepartmentModel> departmentList = new ArrayList<DepartmentModel>();
 		
-		if(parentId ==null) {
-			
+		if(parentId ==null || "".equals(parentId)) {
+			parentId=null;
 			departmentList = departmentEbi.findDepartmentTopList();
 			
 			
@@ -27,15 +27,9 @@ public class DepartmentAction extends BaseAction<DepartmentModel>{
 			
 			departmentList = departmentEbi.findDepartmentChildren(parentId);
 			DepartmentModel department = departmentEbi.findDepartmentById(parentId);
-//			if(null!=department.getParent()) {
-//				
-//				parentId=department.getParent().getId();
-//				
-//			}else {
-//				
-//				
-//				parentId=null;
-//			}
+			
+			pushModel(department);
+//			
 		}
 		
 		
@@ -50,7 +44,7 @@ public class DepartmentAction extends BaseAction<DepartmentModel>{
 	
 	//部门删除
 	public String departmentDelete() {
-		departmentEbi.deleteDepartment(model.getId());
+		departmentEbi.departmentDelete(model.getId());
 		
 		return "toDepartmentListPage";
 		

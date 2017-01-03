@@ -26,18 +26,7 @@ public class DepartmentEbo implements DepartmentEbi{
 
 
 
-	@Override
-	public void deleteDepartment(String id) {
-		DepartmentModel department = departmentDao.findById(id);
-		if(department != null) {
-			
-			departmentDao.deleteModel(department);
-			
-			
-		}
-	}
-
-
+	
 
 	@Override
 	public DepartmentModel findDepartmentById(String parentId) {
@@ -68,6 +57,20 @@ public class DepartmentEbo implements DepartmentEbi{
 	public List<DepartmentModel> findDepartmentChildren(String parentId) {
 		
 		return departmentDao.findDepartmentChildren(parentId);
+	}
+
+
+
+	@Override
+	public void departmentDelete(String id) {
+		DepartmentModel department = departmentDao.findById(id);
+		if(department != null) {
+			
+			departmentDao.deleteModel(department);
+			
+			
+		}
+		
 	}
 
 }

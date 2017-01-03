@@ -11,7 +11,7 @@
     </script>
 </head>
 <body>
- <s:debug></s:debug>
+ 
  <hr/>
 <div id="Title_bar">
     <div id="Title_bar_Head">
@@ -41,10 +41,18 @@
         <s:iterator value="departmentList">
 			<tr class="TableDetail1 template">
 				<td>
-					<s:a action="departmentAction_departmentListPage.do">${departmentName}
+					<s:if test="%{children.size()>0}">
+					<s:a action="departmentAction_departmentListPage.do"><font color="blue">${departmentName}</font>
 						<s:param name="parentId" value="id"></s:param>
 					
 					</s:a>
+					
+					</s:if>
+					
+					<s:else>
+					
+						${departmentName}
+					</s:else>
 				
 				
 				&nbsp;</td>
@@ -74,7 +82,7 @@
             <s:if test="%{parentId!=null}">
             	<s:a action="departmentAction_departmentListPage.do">
             	
-            	<s:param name="parentId" value="parentId"></s:param>
+            	<s:param name="parentId" value="parent.id"></s:param>
             	<IMG SRC="${pageContext.request.contextPath}/style/blue/images/button/ReturnToPrevLevel.png" /></s:a>
             </s:if>
         </div>

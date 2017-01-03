@@ -33,7 +33,8 @@
 		
 		<tx:advice id="oa_advice" transaction-manager="txManager">
 			<tx:attributes>
-				<tx:method name="add*" rollback-for="Exception"/>
+				<tx:method name="*Add" rollback-for="Exception"/>
+				<tx:method name="*Delete" rollback-for="Exception"/>
 			
 			</tx:attributes>
 		
