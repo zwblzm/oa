@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cn.aurora.oa.base.BaseAction;
+import cn.aurora.oa.utils.DepartmentUtils;
 import cn.aurora.oa.vo.DepartmentModel;
 @Controller
 @Scope("prototype")
@@ -16,6 +17,10 @@ public class DepartmentAction extends BaseAction<DepartmentModel>{
 	
 	//显示部门列表
 	public String departmentListPage() {
+		
+		
+		
+		
 		List<DepartmentModel> departmentList = new ArrayList<DepartmentModel>();
 		
 		if(parentId ==null || "".equals(parentId)) {
@@ -53,8 +58,13 @@ public class DepartmentAction extends BaseAction<DepartmentModel>{
 	
 	//部门添加界面
 	public String departmentAddPage() {
-		List<DepartmentModel> departmentList = departmentEbi.findAll();
-		setValueStack("departmentList", departmentList);
+
+		List<DepartmentModel> topList = departmentEbi.findDepartmentTopList();
+		
+		List<DepartmentModel> tree = DepartmentUtils.getTreeList(topList, null);
+		setValueStack("departmentList", tree);
+		
+		
  		return "departmentAddPage";
 	}
 	
