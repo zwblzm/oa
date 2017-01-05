@@ -198,7 +198,10 @@
 					</div>
                 </li>
                 <li class="level2">
-                    <div class="level2Style"><img src="${pageContext.request.contextPath}/style/images/MenuIcon/menu_arrow_single.gif" /> <a target="right" href="System_User/list.html"> 用户管理</a></div>
+                    <div class="level2Style"><img src="${pageContext.request.contextPath}/style/images/MenuIcon/menu_arrow_single.gif" /> 
+                    <s:a action="userAction_userListPage.do" target="right"> 用户管理</s:a>
+                    
+                    </div>
                 </li>
                 <!--
                 <li class="level2">

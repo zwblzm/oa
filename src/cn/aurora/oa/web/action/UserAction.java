@@ -10,7 +10,9 @@ import cn.aurora.oa.vo.UserModel;
 @Scope("prototype")
 public class UserAction extends BaseAction<UserModel>{
 	
-	
+	public String userListPage() {
+		return "userListPage";
+	}
 	
 	
 

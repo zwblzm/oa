@@ -3,11 +3,14 @@ package cn.aurora.oa.vo;
 public class UserModel {
 	private String id;
 	private String loginName;
+	
 	private String realName;
+	private String password;
 	private String telephone;
 	private Integer gender;
 	private String email;
 	private String remark;
+	
 	private Long createTime;
 	public String getId() {
 		return id;
@@ -56,6 +59,17 @@ public class UserModel {
 	}
 	public void setCreateTime(Long createTime) {
 		this.createTime = createTime;
+	}
+	
+	
+	
+	
+	
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	@Override
 	public String toString() {
