@@ -1,5 +1,8 @@
 package cn.aurora.oa.vo;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class UserModel {
 	private String id;
 	private String loginName;
@@ -12,6 +15,36 @@ public class UserModel {
 	private String remark;
 	
 	private Long createTime;
+	
+	private static final String GENDER_VIEW_MAN="男";
+	private static final String GENDER_VIEW_WOMAN="女";
+	private static final Integer GENDER_MAN=1;
+	private static final Integer GENDER_WOMAN=2;
+	
+	private static final Map<Integer, String> genderMap = new HashMap<Integer, String>();
+	static {
+		
+			genderMap.put(GENDER_MAN, GENDER_VIEW_MAN);
+			genderMap.put(GENDER_WOMAN, GENDER_VIEW_WOMAN);
+		
+		
+	}
+	
+	
+	
+	private String genderView;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public String getGenderView() {
+		return genderView;
+	}
 	public String getId() {
 		return id;
 	}
