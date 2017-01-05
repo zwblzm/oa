@@ -23,7 +23,8 @@
 
 <!--显示表单内容-->
 <div id=MainArea>
-    <form action="list.html">
+   
+    <s:form action="userAction_userAdd.do">
         <div class="ItemBlock_Title1"><!-- 信息说明 --><div class="ItemBlock_Title1">
         	<img border="0" width="4" height="7" src="${pageContext.request.contextPath}/style/blue/images/item_point.gif" /> 用户信息 </div> 
         </div>
@@ -45,27 +46,33 @@
                         </td>
                     </tr>
                     <tr><td>登录名</td>
-                        <td><input type="text" name="loginName" class="InputStyle"/> *
+                        <td>
+                        	<s:textfield name="loginName" cssClass="InputStyle"></s:textfield> *
 							（登录名要唯一）
 						</td>
                     </tr>
                     <tr><td>姓名</td>
-                        <td><input type="text" name="name" class="InputStyle"/> *</td>
+                        <td><s:textfield name="realName" cssClass="InputStyle"></s:textfield> *</td>
                     </tr>
 					<tr><td>性别</td>
                         <td><!-- <input type="RADIO" name="sex" value="男" id="male"/><label for="male">男</label>
 							<input type="RADIO" name="sex" value="女" id="female"/><label for="female">女</label> -->
-							<s:radio list="@cn.aurora.oa.vo.UserModel@genderMap"></s:radio>
+							
+							<s:radio list="@cn.aurora.oa.vo.UserModel@genderMap" name="gender"></s:radio>
 						</td>
                     </tr>
 					<tr><td>联系电话</td>
-                        <td><input type="text" name="phoneNumber" class="InputStyle"/></td>
+                        <td>
+                        	<s:textfield name="telephone" cssClass="InputStyle"></s:textfield>
+                        </td>
                     </tr>
                     <tr><td>E-mail</td>
-                        <td><input type="text" name="email" class="InputStyle"/></td>
+                        <td>
+                        	<s:textfield name="email" cssClass="InputStyle"></s:textfield>
+                        </td>
                     </tr>
                     <tr><td>备注</td>
-                        <td><textarea name="description" class="TextareaStyle"></textarea></td>
+                        <td><textarea name="remark" class="TextareaStyle"></textarea></td>
                     </tr>
                 </table>
             </div>
@@ -100,7 +107,7 @@
             <input type="image" src="${pageContext.request.contextPath}/style/images/save.png"/>
             <a href="javascript:history.go(-1);"><img src="${pageContext.request.contextPath}/style/images/goBack.png"/></a>
         </div>
-    </form>
+    </s:form>
 </div>
 
 <div class="Description">

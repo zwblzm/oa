@@ -21,7 +21,7 @@ public class UserModel {
 	private static final Integer GENDER_MAN=1;
 	private static final Integer GENDER_WOMAN=2;
 	
-	private static final Map<Integer, String> genderMap = new HashMap<Integer, String>();
+	public static final Map<Integer, String> genderMap = new HashMap<Integer, String>();
 	static {
 		
 			genderMap.put(GENDER_MAN, GENDER_VIEW_MAN);
@@ -111,7 +111,6 @@ public class UserModel {
 				+ ", gender=" + gender + ", email=" + email + ", remark="
 				+ remark + ", createTime=" + createTime + "]";
 	}
-	
 	
 	
 	

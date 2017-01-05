@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import cn.aurora.oa.business.ebi.DepartmentEbi;
 import cn.aurora.oa.business.ebi.RoleEbi;
+import cn.aurora.oa.business.ebi.UserEbi;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -18,6 +19,8 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T>{
 	protected DepartmentEbi departmentEbi;
 	@Resource
 	protected RoleEbi roleEbi;
+	@Resource
+	protected UserEbi userEbi;
 	
 	public BaseAction() {
 		

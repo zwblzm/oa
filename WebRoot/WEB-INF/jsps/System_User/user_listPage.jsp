@@ -15,7 +15,7 @@
         <div id="Title_Head"></div>
         <div id="Title"><!--页面标题-->
             <img border="0" width="13" height="13" src="${pageContext.request.contextPath}/style/images/title_arrow.gif"/> 用户管理
-         scope=${application.ctx}
+        
         </div>
         <div id="Title_End"></div>
     </div>
@@ -38,25 +38,28 @@
         </thead>
         
         <!--显示数据列表-->
-        <tbody id="TableData" class="dataContainer" datakey="userList">
+        <tbody id="TableData">
+        	<s:iterator value="userList">
             <tr class="TableDetail1 template">
-                <td>${user.loginName}&nbsp;</td>
-                <td>${user.name}&nbsp;</td>
-                <td>${user.department}&nbsp;</td>
+                <td>${loginName}&nbsp;</td>
+                <td>${realName}&nbsp;</td>
+                <td>${department}&nbsp;</td>
                 <td>${user.roles}&nbsp;</td>
-                <td>${user.description}&nbsp;</td>
+                <td>${remark}&nbsp;</td>
                 <td><a onClick="return delConfirm()" href="list.html">删除</a>
                     <a href="saveUI.html">修改</a>
 					<a href="#" onClick="return window.confirm('您确定要初始化密码为1234吗？')">初始化密码</a>
                 </td>
             </tr>
+            </s:iterator>
         </tbody>
     </table>
     
     <!-- 其他功能超链接 -->
     <div id="TableTail">
         <div id="TableTail_inside">
-            <a href="saveUI.html"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></a>
+            
+            <s:a action="userAction_userAddPage.do"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></s:a>
         </div>
     </div>
 </div>
