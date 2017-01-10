@@ -1,7 +1,9 @@
 package cn.aurora.oa.vo;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class UserModel {
 	private String id;
@@ -13,7 +15,9 @@ public class UserModel {
 	private Integer gender;
 	private String email;
 	private String remark;
+	private Set<RoleModel> roles = new HashSet<RoleModel>();
 	
+	private DepartmentModel department;
 	private Long createTime;
 	
 	private static final String GENDER_VIEW_MAN="男";
@@ -110,6 +114,18 @@ public class UserModel {
 				+ ", realName=" + realName + ", telephone=" + telephone
 				+ ", gender=" + gender + ", email=" + email + ", remark="
 				+ remark + ", createTime=" + createTime + "]";
+	}
+	public Set<RoleModel> getRoles() {
+		return roles;
+	}
+	public void setRoles(Set<RoleModel> roles) {
+		this.roles = roles;
+	}
+	public DepartmentModel getDepartment() {
+		return department;
+	}
+	public void setDepartment(DepartmentModel department) {
+		this.department = department;
 	}
 	
 	

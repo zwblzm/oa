@@ -19,7 +19,12 @@
 		<property name="createTime"></property>
 	
 	
-	
+		<set name="roles" table="tbl_sys_roleanduser">
+			<key column="userId"></key>
+			<many-to-many class="cn.aurora.oa.vo.RoleModel" column="roleId" ></many-to-many>
+		</set>
+		
+		<many-to-one name="department" class="cn.aurora.oa.vo.DepartmentModel" column="departmentId"></many-to-one>
 	
 	</class>
 
