@@ -34,15 +34,8 @@
             <div class="ItemBlock">
                 <table cellpadding="0" cellspacing="0" class="mainForm">
                     <tr><td width="100">所属部门</td>
-                        <td><select name="departmentId" class="SelectStyle">
-                                <option value="0" selected="selected">请选择部门</option>
-                                <option value="7">┠总经理室</option>
-                                <option value="1">┠市场部</option>
-                                <option value="2">　┠咨询部</option>
-                                <option value="3">　┠招生部</option>
-                                <option value="4">┠教学部</option>
-                                <option value="5">┠后勤部</option>
-                            </select> 
+                        <td>
+							<s:select list="departmentList" listKey="id" listValue="departmentName" name="departmentId"></s:select> 
                         </td>
                     </tr>
                     <tr><td>登录名</td>
@@ -95,6 +88,10 @@
                                 <option value="4">总经理</option>
                                 <option value="5">测试员</option>
                             </select>
+                            <s:select list="roleList"></s:select>
+                            
+                            
+                            
                             按住Ctrl键可以多选或取消选择
                         </td>
                     </tr>

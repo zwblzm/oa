@@ -24,6 +24,7 @@ public class UserAction extends BaseAction<UserModel>{
 	public String userAddPage() {
 		List<DepartmentModel> top = departmentEbi.findDepartmentTopList();
 		List<DepartmentModel> tree = DepartmentUtils.getTreeList(top, null);
+		
 		setValueStack("departmentList", tree);
 		return "userAddPage";
 	}
@@ -33,6 +34,14 @@ public class UserAction extends BaseAction<UserModel>{
 		userEbi.userAdd(model);
 		
 		return "toUserListPage";
+	}
+	
+	//用户删除功能
+	public String userDelete() {
+		userEbi.userDelete(model.getId());
+		
+		return "toUserListPage";
+		
 	}
 	
 	

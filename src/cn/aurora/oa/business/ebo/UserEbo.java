@@ -25,5 +25,18 @@ public class UserEbo implements UserEbi{
 		List<UserModel> userList = userDao.findAll();
 		return userList;
 	}
+	@Override
+	public void userDelete(String id) {
+		UserModel user = userDao.findById(id);
+		if(user!=null) {
+			userDao.deleteModel(user);
+			
+		}
+		
+		
+		
+		
+		
+	}
 
 }

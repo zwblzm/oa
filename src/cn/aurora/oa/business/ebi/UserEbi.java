@@ -10,4 +10,6 @@ public interface UserEbi {
 
 	List<UserModel> findAllUser();
 
+	void userDelete(String id);
+
 }

@@ -43,10 +43,19 @@
             <tr class="TableDetail1 template">
                 <td>${loginName}&nbsp;</td>
                 <td>${realName}&nbsp;</td>
-                <td>${department}&nbsp;</td>
-                <td>${user.roles}&nbsp;</td>
+                <td>${department.departmentName}&nbsp;</td>
+                <td>
+					<s:iterator value="roles">
+						${roleName}&nbsp;
+					</s:iterator>
+
+				</td>
                 <td>${remark}&nbsp;</td>
-                <td><a onClick="return delConfirm()" href="list.html">删除</a>
+                <td>
+                	<s:a action="userAction_userDelete.do">
+                		<s:param name="id" value="id"></s:param>
+                		删除
+                	</s:a>
                     <a href="saveUI.html">修改</a>
 					<a href="#" onClick="return window.confirm('您确定要初始化密码为1234吗？')">初始化密码</a>
                 </td>
